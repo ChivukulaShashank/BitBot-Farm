@@ -1,0 +1,8 @@
+services:
+  bitbot-dev:
+    build: .
+    container_name: bitbot-farm-container
+    volumes:
+      - .:/workspace  # Binds your local folder to the container
+    tty: true         # Keeps the container running
+    stdin_open: true  # Allows interaction
