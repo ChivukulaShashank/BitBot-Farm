@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: bitbot-farm
+Version: 0.1.0
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: pydantic
+Requires-Dist: polars
+Requires-Dist: networkx
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Requires-Dist: maturin; extra == "dev"

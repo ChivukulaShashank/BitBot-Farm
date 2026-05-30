@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic
+polars
+networkx
+
+[dev]
+pytest
+ruff
+maturin

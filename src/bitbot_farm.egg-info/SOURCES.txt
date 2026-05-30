@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+src/bitbot/__init__.py
+src/bitbot/interface.py
+src/bitbot_farm.egg-info/PKG-INFO
+src/bitbot_farm.egg-info/SOURCES.txt
+src/bitbot_farm.egg-info/dependency_links.txt
+src/bitbot_farm.egg-info/requires.txt
+src/bitbot_farm.egg-info/top_level.txt
+tests/test_interface.py

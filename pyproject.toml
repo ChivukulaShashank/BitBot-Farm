@@ -5,6 +5,13 @@ dependencies = [
     "fastapi",
     "uvicorn",
     "pydantic",
+    "polars",    # High-performance data processing
+    "networkx",  # Essential for your Causal DAGs
+]
+
+[project.optional-dependencies]
+dev = [
     "pytest",
-    "ruff"
+    "ruff",
+    "maturin"    # Crucial for your Python-Rust bridge
 ]
