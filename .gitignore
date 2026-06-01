@@ -1,0 +1,16 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Rust
+/core/inference_swarm/target/
+
+# Data & Logs (Do not push raw patient data or mutable audit logs)
+data/clinical/*
+!data/clinical/.gitkeep
+logs/audit/*
+!logs/audit/.gitkeep
+
+# OS
+.DS_Store
