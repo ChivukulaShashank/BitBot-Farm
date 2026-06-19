@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "C.A.D.A AST Logic Manifest",
+  "type": "object",
+  "required": ["version", "hash", "rules"],
+  "properties": {
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "hash": {
+      "type": "string",
+      "minLength": 64,
+      "maxLength": 64
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["rule_id", "ast", "metadata"],
+        "properties": {
+          "rule_id": { "type": "string" },
+          "ast": {
+            "type": "object",
+            "required": ["node_type", "left", "operator", "right"],
+            "properties": {
+              "node_type": { "type": "string", "const": "BinaryExpression" },
+              "left": {
+                "type": "object",
+                "required": ["node_type", "value"],
+                "properties": {
+                  "node_type": { "type": "string", "const": "Feature" },
+                  "value": { "type": "string" }
+                }
+              },
+              "operator": { "enum": ["lt", "gt", "eq", "lte", "gte"] },
+              "right": {
+                "type": "object",
+                "required": ["node_type", "value"],
+                "properties": {
+                  "node_type": { "type": "string", "const": "Threshold" },
+                  "value": { "type": "number" }
+                }
+              }
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "required": ["pure", "output_consequent"],
+            "properties": {
+              "pure": { "type": "boolean", "const": true },
+              "output_consequent": { "type": "integer", "enum": [0, 1] }
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
